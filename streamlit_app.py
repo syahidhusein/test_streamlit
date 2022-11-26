@@ -8,5 +8,7 @@ clothes_options = ["shirts","dresses","hats"]
 st.header("Select a clothing item from below:")
 clothes_selected = st.selectbox("Which clothing would you select?",
                                 options= clothes_options)
+""""file uploader"""
+st.file_uploader("Please upload a file")
 # """Write"""
 # st.write("You have chosen:",clothes_options,"")
