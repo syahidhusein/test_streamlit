@@ -38,6 +38,7 @@ with user_interaction:
   st.write(item)
 
 with model:
+  st.write("This is where the model will be")
   
   
 with junk:
