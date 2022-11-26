@@ -9,12 +9,17 @@ user_interaction = st.container()
 model = st.container()
 junk = st.container()
 
+@st.cache
+def get_data(filename):
+  data = pd.read_csv(filename)
+  return data
+
 with title:
   st.title("Fashion Designer")
   
 with dataset:
   st.header("Dataset")
-  images = pd.read_csv("images.csv")
+  images = get_data("images.csv")
   st.write(images)
   st.bar_chart(images["label"].value_counts())
   
