@@ -9,7 +9,7 @@ st.header("Select a clothing item from below:")
 clothes_selected = st.selectbox("Which clothing would you select?",
                                 options= clothes_options)
 """Write"""
-st.write("Selectbox returns:",,clothes_selected,
+st.write("Selectbox returns:",clothes_selected,
         "of type",type(clothes_selected))
 """"file uploader"""
 st.file_uploader("Please upload a file")
