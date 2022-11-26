@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 """Title"""
 st.title("Fashion Designer")
+st.header("Dataset")
 images = pd.read_csv("images.csv")
 st.write(images)
 """Header"""
