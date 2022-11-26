@@ -9,6 +9,19 @@ user_interaction = st.container()
 model = st.container()
 junk = st.container()
 
+
+
+"""How to Add CSS"""
+st.markdown(
+    """
+    <style>
+    .main {
+    background-color: #F5F5F5;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 @st.cache
 def get_data(filename):
   data = pd.read_csv(filename)
