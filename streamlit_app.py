@@ -7,6 +7,7 @@ st.title("Fashion Designer")
 st.header("Dataset")
 images = pd.read_csv("images.csv")
 st.write(images)
+st.bar_chart(images["label"].value_counts())
 """Header"""
 clothes_options = ["shirts","dresses","hats"]
 st.header("Select a clothing item from below:")
