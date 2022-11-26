@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 """Title"""
 st.title("Fashion Designer")
+images = pd.read_csv("images.csv")
+st.write(images)
 """Header"""
 clothes_options = ["shirts","dresses","hats"]
 st.header("Select a clothing item from below:")
