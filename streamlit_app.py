@@ -19,7 +19,8 @@ if clothes_selected == "shirts":
   st.write("You have selected a shirt")
 else:
   st.write("You have not selected a shirt")
-
+st.markdown("* First item in the list")
+st.markdown("* Second item in the list")
 st.header("Selectbox from a NumPy array")
 array = np.array([[1,2,3],[4,5,6],[7,8,9]])
 col1, mid, col2 = st.columns([1,3,3])
