@@ -1,6 +1,10 @@
 """This is a test for streamlit"""
 import streamlit as st
 import numpy as np
+import pandas as pd
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 """Title"""
 st.title("Fashion Designer")
 """Header"""
@@ -15,6 +19,10 @@ if clothes_selected == "shirts":
   st.write("You have selected a shirt")
 else:
   st.write("You have not selected a shirt")
+
+st.header("Selectbox from a NumPy array")
+array = np.array([[1,2,3],[4,5,6],[7,8,9]])
+col1, mid, col2 = st.columns([1,0.1,3])
 
 """File uploader"""
 st.file_uploader("Please upload a file")
