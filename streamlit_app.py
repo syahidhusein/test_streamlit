@@ -19,7 +19,7 @@ else:
 
 st.header("Selectbox from a NumPy array")
 array = np.array([[1,2,3],[4,5,6],[7,8,9]])
-col1, mid, col2 = st.columns([1,0.1,3])
+col1, mid, col2 = st.columns([1,3,3])
 with col1:
   st.write("My Array:",array)
 with mid:
