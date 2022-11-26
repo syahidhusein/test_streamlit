@@ -7,6 +7,7 @@ title = st.beta_container()
 dataset = st.beta_container()
 user_interaction = st.beta_container()
 model = st.beta_container()
+junk = st.beta_container()
 
 with title:
   st.title("Fashion Designer")
