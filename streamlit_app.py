@@ -3,11 +3,11 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-title = st.beta_container()
-dataset = st.beta_container()
-user_interaction = st.beta_container()
-model = st.beta_container()
-junk = st.beta_container()
+title = st.container()
+dataset = st.container()
+user_interaction = st.container()
+model = st.container()
+junk = st.container()
 
 with title:
   st.title("Fashion Designer")
