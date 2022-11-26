@@ -2,9 +2,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
+import scikit-learn as sklearn
 """Title"""
 st.title("Fashion Designer")
 """Header"""
