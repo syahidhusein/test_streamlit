@@ -25,7 +25,7 @@ with col1:
 with mid:
   st.write("something")
 with col2:
-  st.write("something else")
+  st.write("something else")  
 """File uploader"""
 st.file_uploader("Please upload a file")
 
