@@ -11,7 +11,13 @@ clothes_selected = st.selectbox("Which clothing would you select?",
 """Write"""
 st.write("Selectbox returns:",clothes_selected,
         "of type",type(clothes_selected))
-""""file uploader"""
+if clothes_selected == "shirts":
+  st.write("You have selected a shirt")
+ else:
+  st.write("You have not selected a shirt")
+
+"""File uploader"""
 st.file_uploader("Please upload a file")
+
 # """Write"""
 # st.write("You have chosen:",clothes_options,"")
