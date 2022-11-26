@@ -42,9 +42,10 @@ with model:
   
   
 with junk:
+  st.header("Ignore everything below")
   st.markdown("* First item in the list")
   st.markdown("* Second item in the list")
-  st.header("Selectbox from a NumPy array")
+  st.write("Selectbox from a NumPy array")
   array = np.array([[1,2,3],[4,5,6],[7,8,9]])
   col1, mid, col2 = st.columns([1,3,3])
   with col1:
