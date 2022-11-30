@@ -53,7 +53,7 @@ with user_interaction:
   st.markdown("* Rule 1")
   st.markdown("* Rule 2")
   item = st.file_uploader("Please upload a clothing item")
-  st.write(item)
+  st.write(type(item))
 
 with model:
   st.write("This is where the model will be")
