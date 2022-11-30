@@ -47,7 +47,9 @@ with user_interaction:
     st.write("You have selected a shirt")
   else:
     st.write("You have not selected a shirt")
-    
+   
+ st.write("test")   
+
   st.subheader("*Important*")
   st.write("Please note the following before uploading your item")
   st.markdown("* Rule 1")
