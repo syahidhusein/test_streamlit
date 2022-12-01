@@ -55,6 +55,13 @@ with user_interaction:
   st.markdown("* Rule 2")
   item = st.file_uploader("Please upload a clothing item")
   st.write(type(item))
+  camera_pic = st.camera_input("Please take a photo!")
+  progress_bar = st.progress(0) 
+  for perc_completed in range(100):
+    time.sleep(0.01)
+    progress_bar.progress(perc_completed+1)
+  st.success("Photo uploaded successfully")
+  st.metric(label="Temperature", value="60 C",delta="3 C")
 
 with model:
   st.write("This is where the model will be")
