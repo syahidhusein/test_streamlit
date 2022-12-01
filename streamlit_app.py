@@ -66,9 +66,9 @@ with user_interaction:
   with st.expander("Click to read more"):
     st.write("here is your photo!")
     if uploaded_photo is None:
-             st.image(camera_photo)
+      st.image(camera_photo)
     else:
-             st.image(uploaded_photo)
+      st.image(uploaded_photo)
 with model:
   st.write("This is where the model will be")
   
