@@ -63,7 +63,12 @@ with user_interaction:
     progress_bar.progress(perc_completed+1)
   st.success("Photo uploaded successfully")
   st.metric(label="Temperature", value="60 C",delta="3 C")
-
+  with st.expander("Click to read more"):
+    st.write("here is your photo!)
+    if uploaded_photo is None:
+             st.image(camera_photo)
+    else:
+             st.image(uploaded_photo)
 with model:
   st.write("This is where the model will be")
   
