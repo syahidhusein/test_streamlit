@@ -10,7 +10,11 @@ user_interaction = st.container()
 model = st.container()
 junk = st.container()
 
+if "photo" not in st.session_state:
+    st.session_state["photo"]="not done"
 
+def change_photo_state():
+    st.session_state["photo"]="done"
 
 #How to Add CSS
 st.markdown(
@@ -54,21 +58,22 @@ with user_interaction:
   st.write("Please note the following before uploading your item")
   st.markdown("* Rule 1")
   st.markdown("* Rule 2")
-  item = st.file_uploader("Please upload a clothing item")
+  item = st.file_uploader("Please upload a clothing item",on_change=change_photo_state)
   st.write(type(item))
-  camera_pic = st.camera_input("Please take a photo!")
+  camera_pic = st.camera_input("Please take a photo!",on_change=change_photo_state)
   progress_bar = st.progress(0) 
-  for perc_completed in range(100):
-    time.sleep(0.01)
-    progress_bar.progress(perc_completed+1)
-  st.success("Photo uploaded successfully")
-  st.metric(label="Temperature", value="60 C",delta="3 C")
-  with st.expander("Click to read more"):
-    st.write("here is your photo!")
-    if item is None:
-      st.image(camera_pic)
-    else:
-      st.image(item)
+  if st.session_state["photo"]=="done":
+      for perc_completed in range(100):
+        time.sleep(0.01)
+        progress_bar.progress(perc_completed+1)
+      st.success("Photo uploaded successfully")
+      st.metric(label="Temperature", value="60 C",delta="3 C")
+      with st.expander("Click to read more"):
+        st.write("here is your photo!")
+        if item is None:
+          st.image(camera_pic)
+        else:
+          st.image(item)
 with model:
   st.write("This is where the model will be")
   
