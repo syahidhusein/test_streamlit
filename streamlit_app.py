@@ -65,7 +65,7 @@ with user_interaction:
   st.metric(label="Temperature", value="60 C",delta="3 C")
   with st.expander("Click to read more"):
     st.write("here is your photo!")
-    if uploaded_photo is None:
+    if item is None:
       st.image(camera_pic)
     else:
       st.image(item)
