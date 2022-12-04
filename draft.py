@@ -24,7 +24,9 @@ def change_photo_state():
     
 with title:
   with col2:
-    st.title("Outfit Recommender")
+    st.title("Outfit")
+  with col3:
+    st.title("Recommender")
   
 with dataset:
   with col2:
