@@ -14,7 +14,7 @@ def get_data(filename):
   data = pd.read_csv(filename)
   return data
 
-col1,col2,col3 = st.columns(3)
+col1,col2,col3,col4 = st.columns(4)
 
 if "photo" not in st.session_state:
     st.session_state["photo"]="not done"
@@ -23,7 +23,7 @@ def change_photo_state():
     st.session_state["photo"]="done"
     
 with title:
-  with col2:
+  with col2 & col3:
     st.title("Outfit Recommender")
   
 with dataset:
