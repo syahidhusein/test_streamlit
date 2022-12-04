@@ -27,7 +27,8 @@ with title:
     st.title("Outfit Recommender")
   
 with dataset:
-
+  st.write("something")
 with user_interaction:
-
+  st.write("something else")
 with model:
+  st.write("something other than else")
