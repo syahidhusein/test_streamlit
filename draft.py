@@ -22,18 +22,18 @@ if "photo" not in st.session_state:
 def change_photo_state():
     st.session_state["photo"]="done"
     
-with title:
-  with col3:
+with col3:
+  with title:
     st.title("Outfit Recommender")
-  
-with dataset:
-  with col2:
+
+with col2:
+  with dataset:
     st.write("something")
     
-with user_interaction:
-  with col2:
+with col2:
+  with user_interaction:
     st.write("something else")
 
-with model:
-  with col2:
+with col2:
+  with model:
     st.write("something other than else")
