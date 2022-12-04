@@ -23,11 +23,17 @@ def change_photo_state():
     st.session_state["photo"]="done"
     
 with title:
+  with col2:
     st.title("Outfit Recommender")
   
 with dataset:
-  st.write("something")
+  with col2:
+    st.write("something")
+    
 with user_interaction:
-  st.write("something else")
+  with col2:
+    st.write("something else")
+
 with model:
-  st.write("something other than else")
+  with col2:
+    st.write("something other than else")
