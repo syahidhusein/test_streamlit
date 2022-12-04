@@ -23,10 +23,8 @@ def change_photo_state():
     st.session_state["photo"]="done"
     
 with title:
-  with col2:
-    st.title("Outfit")
-  with col3:
-    st.title("Recommender")
+  with col2 & col3:
+    st.title("Outfit Recommender")
   
 with dataset:
   with col2:
