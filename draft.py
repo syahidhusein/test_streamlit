@@ -72,4 +72,4 @@ if camera_pic is not None:
 
     # Check the shape of img_array:
     # Should output shape: (height, width, channels)
-    st.write("PIL shape: " + img_array.shape)
+    st.write(f"PIL shape: {img_array.shape}")
