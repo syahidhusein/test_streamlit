@@ -58,6 +58,17 @@ if st.session_state["photo"]=="done":
         st.image(camera_pic)
       else:
         st.image(item)
-bytes = camera_pic.getvalue()
-st.write(bytes)
-st.write(type(bytes))
+if camera_pic is not None:
+    # To read image file buffer as a PIL Image:
+    img = Image.open(camera_pic)
+
+    # To convert PIL Image to numpy array:
+    img_array = np.array(img)
+
+    # Check the type of img_array:
+    # Should output: <class 'numpy.ndarray'>
+    st.write(type(img_array))
+
+    # Check the shape of img_array:
+    # Should output shape: (height, width, channels)
+    st.write(img_array.shape)
