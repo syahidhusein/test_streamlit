@@ -58,3 +58,5 @@ if st.session_state["photo"]=="done":
         st.image(camera_pic)
       else:
         st.image(item)
+st.write(type(camera_pic))
+st.write(size(camera_pic))
