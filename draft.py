@@ -74,16 +74,3 @@ if camera_pic is not None:
     # Check the shape of img_array:
     # Should output shape: (height, width, channels)
     st.write("PIL shape: " + img_array.shape)
- 
-if camera_pic is not None:
-    # To read image file buffer with OpenCV:
-    bytes_data = camera_pic.getvalue()
-    cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
-
-    # Check the type of cv2_img:
-    # Should output: <class 'numpy.ndarray'>
-    st.write(type(cv2_img))
-
-    # Check the shape of cv2_img:
-    # Should output shape: (height, width, channels)
-    st.write("OpenCV shape: " + cv2_img.shape)
