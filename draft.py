@@ -63,7 +63,7 @@ st.write(camera_pic)
 st.download_button(
     label="Download image",
     data=camera_pic,
-    file_name='test_image.jpg'
+    file_name= r"C:\Users\ASUS\Desktop\Sem 3\DSAI\test_streamlit\test_image.jpg"
 )
 st.write(type(camera_pic))
 if camera_pic is not None:
