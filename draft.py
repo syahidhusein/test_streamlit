@@ -60,7 +60,6 @@ if st.session_state["photo"]=="done":
       else:
         st.image(item)
 st.write(camera_pic)
-camera_pic.save(".")
 st.write(type(camera_pic))
 if camera_pic is not None:
     # To read image file buffer as a PIL Image:
