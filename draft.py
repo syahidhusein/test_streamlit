@@ -59,4 +59,4 @@ if st.session_state["photo"]=="done":
       else:
         st.image(item)
 bytes = camera_pic.getvalue()
-st.write(type(byte))
+st.write(type(bytes))
