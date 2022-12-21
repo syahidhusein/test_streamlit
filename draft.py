@@ -80,3 +80,7 @@ if camera_pic is not None:
     # Check the shape of img_array:
     # Should output shape: (height, width, channels)
     st.write(f"PIL shape: {img_array.shape}")
+    
+    # Convert image to required size:
+    img = camera_pic.resize((80,60))
+    st.write(img)
