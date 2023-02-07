@@ -26,7 +26,7 @@ junk = st.container()
 directory = os.getcwd()
 path = os.join(directory+"/Trained_for_Outfits3.h5")
 
-#model = tf.keras.models.load_model(path)
+model = tf.keras.models.load_model(path)
 
 @st.cache
 def get_data(filename):
