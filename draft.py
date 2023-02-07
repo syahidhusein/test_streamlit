@@ -3,12 +3,19 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 import time
+import os
+from tensorflow import keras
 
 title = st.container()
 dataset = st.container()
 user_interaction = st.container()
 model = st.container()
 junk = st.container()
+
+directory = os.getcwd()
+path = os.join(directory+"/Trained_for_Outfits3.h5")
+
+model = keras.models.load_model(path)
 
 @st.cache
 def get_data(filename):
