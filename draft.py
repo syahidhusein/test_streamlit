@@ -7,11 +7,11 @@ import time
 # import subprocess
 # import sys
 
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-    
-# install(os-sys)
-install(h5py)
+# def install(package):
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+#
+# # install(os-sys)
+# install(h5py)
 
 import tensorflow as tf
 import os
@@ -23,10 +23,10 @@ model = st.container()
 junk = st.container()
 
 directory = os.getcwd()
-path = os.path.join(directory+"/Trained_for_Outfits3.h5")
-
-model = tf.keras.models.load_model(path)
-
+path_type = os.path.join(directory+"/Trained_for_Outfits3.h5")
+path_color = os.path.join(directory+"/Trained_for_Outfits4.h5")
+model_type = tf.keras.models.load_model(path_type)
+model_color = tf.keras.models.load_model(path_color)
 st.write(path)
 
 @st.cache
