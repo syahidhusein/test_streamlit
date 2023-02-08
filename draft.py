@@ -23,7 +23,7 @@ model = st.container()
 junk = st.container()
 
 directory = os.getcwd()
-path = os.join(directory+"/Trained_for_Outfits3.h5")
+path = os.path.join(directory+"/Trained_for_Outfits3.h5")
 
 model = tf.keras.models.load_model(path)
 
