@@ -7,11 +7,11 @@ import time
 # import subprocess
 # import sys
 
-# def install(package):
-#     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
     
 # install(os-sys)
-# install(tensorflow)
+install(h5py)
 
 import tensorflow as tf
 import os
