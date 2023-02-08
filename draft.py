@@ -13,7 +13,7 @@ import time
 # install(os-sys)
 # install(tensorflow)
 
-# import tensorflow as tf
+import tensorflow as tf
 import os
 
 title = st.container()
@@ -25,7 +25,7 @@ junk = st.container()
 directory = os.getcwd()
 path = os.join(directory+"/Trained_for_Outfits3.h5")
 
-# model = tf.keras.models.load_model(path)
+model = tf.keras.models.load_model(path)
 
 st.write(path)
 
