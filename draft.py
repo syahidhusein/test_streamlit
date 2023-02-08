@@ -47,16 +47,10 @@ with col3:
     st.title("Outfit Recommender")
 
 with col2:
-  with dataset:
-    st.write("something")
-    
-with col2:
-  with user_interaction:
-    st.write("something else")
+    st.title("Introduction")
+   
+st.write("This project aims to develop an outfit recommendation system using deep learning techniques. The system will take an image from the user as input and suggest a suitable outfit for them. The model will learn to recognize patterns and features in the images, allowing it to make accurate recommendations.")
 
-with col2:
-  with model:
-    st.write("something other than else")
 
 st.subheader("*Important*")
 st.write("Please note the following before uploading your item")
