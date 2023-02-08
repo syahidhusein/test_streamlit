@@ -27,7 +27,7 @@ junk = st.container()
 
 # model = tf.keras.models.load_model(path)
 
-st.write(path)
+# st.write(path)
 
 @st.cache
 def get_data(filename):
