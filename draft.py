@@ -26,7 +26,7 @@ junk = st.container()
 directory = os.getcwd()
 path_type = os.path.join(directory+"\Trained_for_Outfits3.h5")
 # path_color = os.path.join(directory+"\Trained_for_Outfits4.h5")
-model_type = tf.keras.models.load_model(path_type)
+# model_type = tf.keras.models.load_model(path_type)
 # model_color = tf.keras.models.load_model(path_color)
 st.write("you are currently in your " + directory + "directory.")
 st.write("your current path is " + path_type + ".")
@@ -105,10 +105,10 @@ if file_input is not None:
     st.write(f"PIL shape: {img.shape}")
 
     i = img[None, :]
-    p = model.predict(i)
-    st.write(class_article[np.argmax(p[0])])
-    st.write(np.argmax(p[0]))
-    st.write(p[0])
+#     p = model.predict(i)
+#     st.write(class_article[np.argmax(p[0])])
+#     st.write(np.argmax(p[0]))
+#     st.write(p[0])
 
 # if camera_input is given, it opens,resizes,converts to array,and predicts what the camera_input is
 elif camera_input is not None:
@@ -128,7 +128,7 @@ elif camera_input is not None:
     st.write(f"PIL shape: {img.shape}")
 
     i = img[None, :]
-    p = model.predict(i)
-    st.write(class_article[np.argmax(p[0])])
-    st.write(np.argmax(p[0]))
-    st.write(p[0])
+#     p = model.predict(i)
+#     st.write(class_article[np.argmax(p[0])])
+#     st.write(np.argmax(p[0]))
+#     st.write(p[0])
