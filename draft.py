@@ -25,8 +25,8 @@ junk = st.container()
 
 directory = os.getcwd()
 path_type = os.path.join(directory+"\Trained_for_Outfits3.h5")
-# path_color = os.path.join(directory+"\Trained_for_Outfits4.h5")
-model_type = tf.keras.models.load_model(path_type)
+path_color = os.path.join(directory+"\Trained_for_Outfits4.h5")
+# model_type = tf.keras.models.load_model(path_type)
 # model_color = tf.keras.models.load_model(path_color)
 st.write(path)
 
