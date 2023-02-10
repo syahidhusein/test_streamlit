@@ -59,32 +59,31 @@ st.subheader("*Important*")
 st.write("Please note the following before uploading your item")
 st.markdown("* Rule 1")
 st.markdown("* Rule 2")
-item = st.file_uploader("Please upload a clothing item",on_change=change_photo_state)
-st.write(type(item))
-camera_pic = st.camera_input("Please take a photo!",on_change=change_photo_state)
-progress_bar = st.progress(0) 
-if st.session_state["photo"]=="done":
+file_input = st.file_uploader("Please upload a clothing item",on_change=change_photo_state)
+camera_input = st.camera_input("Please take a photo!",on_change=change_photo_state)
+progress_bar = st.progress(0)
+if st.session_state["photo"] == "done":
     for perc_completed in range(100):
-      time.sleep(0.01)
-      progress_bar.progress(perc_completed+1)
+        time.sleep(0.01)
+        progress_bar.progress(perc_completed + 1)
     st.success("Photo uploaded successfully")
-    st.metric(label="Temperature", value="60 C",delta="3 C")
     with st.expander("Click to read more"):
-      st.write("here is your photo!")
-      if item is None:
-        st.image(camera_pic)
-      else:
-        st.image(item)
-st.write(camera_pic)
+        st.write("here is your photo!")
+        if file_input is None:
+            st.image(camera_input)
+        else:
+            st.image(file_input)
+st.write(camera_input)
 st.download_button(
     label="Download image",
-    data=camera_pic,
-    file_name= "test_image.jpg"
+    data=camera_input,
+    file_name="test_image.jpg"
 )
-st.write(type(camera_pic))
-if camera_pic is not None:
+st.write(type(camera_input))
+
+if file_input is not None:
     # To read image file buffer as a PIL Image:
-    img = Image.open(camera_pic)
+    img = Image.open(file_input)
 
     # To convert PIL Image to numpy array:
     img_array = np.array(img)
@@ -96,7 +95,26 @@ if camera_pic is not None:
     # Check the shape of img_array:
     # Should output shape: (height, width, channels)
     st.write(f"PIL shape: {img_array.shape}")
-    
+
     # Convert image to required size:
-    img = camera_pic.resize((80,60))
+    img = file_input.resize((80,60))
+    st.write(img)
+
+elif camera_input is not None:
+    # To read image file buffer as a PIL Image:
+    img = Image.open(camera_input)
+
+    # To convert PIL Image to numpy array:
+    img_array = np.array(img)
+
+    # Check the type of img_array:
+    # Should output: <class 'numpy.ndarray'>
+    st.write(type(img_array))
+
+    # Check the shape of img_array:
+    # Should output shape: (height, width, channels)
+    st.write(f"PIL shape: {img_array.shape}")
+
+    # Convert image to required size:
+    img = camera_input.resize((80,60))
     st.write(img)
