@@ -25,12 +25,12 @@ junk = st.container()
 
 directory = os.getcwd()
 path_type = os.path.join(directory+"\Trained_for_Outfits3.h5")
-path_color = os.path.join(directory+"\Trained_for_Outfits4.h5")
-# model_type = tf.keras.models.load_model(path_type)
+# path_color = os.path.join(directory+"\Trained_for_Outfits4.h5")
+model_type = tf.keras.models.load_model(path_type)
 # model_color = tf.keras.models.load_model(path_color)
-st.write(directory)
-st.write(path_type)
-st.write(path_color)
+st.write("you are currently in your " + directory + "directory.")
+st.write("your current path is " + path_type + ".")
+# st.write(path_color)
 
 @st.cache
 def get_data(filename):
@@ -81,40 +81,54 @@ st.download_button(
 )
 st.write(type(camera_input))
 
+size = 256, 384
+class_article = ['Blazers', 'Casual Shoes', 'Dresses', 'Formal Shoes', 'Heels', 'Innerwear Vests', 'Jackets', 'Jeans',
+                   'Jumpsuit', 'Kurtas', 'Leggings', 'Rain Jacket', 'Robe', 'Salwar and Dupatta', 'Sandals', 'Sarees',
+                   'Shirts', 'Shorts', 'Shrug', 'Skirts', 'Sports Sandals', 'Sports Shoes', 'Sweaters', 'Sweatshirts',
+                   'Tops', 'Track Pants', 'Tracksuits', 'Trousers', 'Tshirts', 'Waistcoat']
+
+# if file_input is given, it opens,resizes,converts to array,and predicts what the file_input is
 if file_input is not None:
     # To read image file buffer as a PIL Image:
-    img = Image.open(file_input)
+    image = Image.open(file_input)
 
     # To convert PIL Image to numpy array:
-    img_array = np.array(img)
+    new_image = image.resize(size)
+    img = np.array(new_image)
 
     # Check the type of img_array:
     # Should output: <class 'numpy.ndarray'>
-    st.write(type(img_array))
+    st.write(type(img))
 
     # Check the shape of img_array:
     # Should output shape: (height, width, channels)
-    st.write(f"PIL shape: {img_array.shape}")
+    st.write(f"PIL shape: {img.shape}")
 
-    # Convert image to required size:
-    img = file_input.resize((80,60))
-    st.write(img)
+    i = img[None, :]
+    p = model.predict(i)
+    st.write(class_article[np.argmax(p[0])])
+    st.write(np.argmax(p[0]))
+    st.write(p[0])
 
+# if camera_input is given, it opens,resizes,converts to array,and predicts what the camera_input is
 elif camera_input is not None:
     # To read image file buffer as a PIL Image:
-    img = Image.open(camera_input)
+    image = Image.open(camera_input)
 
     # To convert PIL Image to numpy array:
-    img_array = np.array(img)
+    new_image = image.resize(size)
+    img = np.array(new_image)
 
     # Check the type of img_array:
     # Should output: <class 'numpy.ndarray'>
-    st.write(type(img_array))
+    st.write(type(img))
 
     # Check the shape of img_array:
     # Should output shape: (height, width, channels)
-    st.write(f"PIL shape: {img_array.shape}")
+    st.write(f"PIL shape: {img.shape}")
 
-    # Convert image to required size:
-    img = camera_input.resize((80,60))
-    st.write(img)
+    i = img[None, :]
+    p = model.predict(i)
+    st.write(class_article[np.argmax(p[0])])
+    st.write(np.argmax(p[0]))
+    st.write(p[0])
