@@ -28,7 +28,9 @@ path_type = os.path.join(directory+"\Trained_for_Outfits3.h5")
 path_color = os.path.join(directory+"\Trained_for_Outfits4.h5")
 # model_type = tf.keras.models.load_model(path_type)
 # model_color = tf.keras.models.load_model(path_color)
-st.write(path)
+st.write(directory)
+st.write(path_type)
+st.write(path_color)
 
 @st.cache
 def get_data(filename):
